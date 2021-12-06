@@ -19,14 +19,14 @@ describe('fetchBreedDescription', () => {
   });
 
   it('returns null when an invalid/non-existent breed is passed in.', (done) => {
-    fetchBreedDescription('Siberian', (err, desc) => {
+    fetchBreedDescription('Sbiberian', (err, desc) => {
       // we expect no error for this scenario
       assert.equal(desc, null);
 
-      const expectedDesc = "null";
+      const expectedDesc = null;
 
       // compare returned description
-      assert.equal(expectedDesc, desc.trim());
+      assert.equal(expectedDesc, desc);
 
       done();
     });

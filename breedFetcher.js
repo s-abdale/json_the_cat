@@ -8,7 +8,13 @@ const fetchBreedDescription = function(breedName, callback) {
     // Desterilize the string to an object so we can sort through it:
     const data = JSON.parse(body);
 
-    let desc = `🐈 DESCRIPTION 🧶 ${'\n'}-${'\n'}🐾 ${data[0].description}`;
+    let desc;
+
+    if (data === false) {
+      desc = null;
+    } else {
+      desc = data[0].description;
+    }
 
     callback(error, desc);
   });
